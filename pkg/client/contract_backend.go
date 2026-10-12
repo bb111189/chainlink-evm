@@ -10,8 +10,6 @@ import (
 
 // contractBackendV2 adapts a Client to bind/v2 ContractBackend, whose
 // TransactionByHash gained a "pending" bool return in go-ethereum v1.17.8.
-// The underlying client cannot report pending-ness, so the adapter always
-// reports false.
 type contractBackendV2 struct {
 	Client
 }

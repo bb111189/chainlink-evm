@@ -54,7 +54,8 @@ contract Ownable2Step is IOwnable {
   function _transferOwnership(
     address to
   ) private {
-    if (to == msg.sender) {
+    // The deployer can differ from the initial owner during construction.
+    if (to == s_owner) {
       revert CannotTransferToSelf();
     }
 
